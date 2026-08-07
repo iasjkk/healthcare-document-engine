@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: healthcare-document-engine
+Version: 0.1.0
+Summary: Agentic AI platform for structured healthcare document understanding.
+Requires-Python: >=3.11

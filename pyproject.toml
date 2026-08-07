@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthcare-document-engine"
+version = "0.1.0"
+description = "Agentic AI platform for structured healthcare document understanding."
+requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = ["framework", "parsers", "agents", "layout", "dom", "named_data_product"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

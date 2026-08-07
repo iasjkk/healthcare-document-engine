@@ -1,0 +1,11 @@
+logging:
+
+  level: INFO
+
+  console: true
+
+  file: true
+
+  json: true
+
+  log_directory: logs

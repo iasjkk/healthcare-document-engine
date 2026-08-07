@@ -1,0 +1,5 @@
+prompts:
+
+  system_directory: prompts/system
+
+  user_directory: prompts/user

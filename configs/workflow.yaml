@@ -1,0 +1,9 @@
+workflow:
+
+  max_retries: 3
+
+  checkpoint: true
+
+  timeout: 300
+
+  parallel_execution: true

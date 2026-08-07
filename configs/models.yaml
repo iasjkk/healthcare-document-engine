@@ -1,0 +1,28 @@
+providers:
+  default: openrouter
+
+models:
+
+  planner:
+    provider: openrouter
+    model: openai/gpt-5
+
+  parser:
+    provider: openrouter
+    model: google/gemma-3-27b-it
+
+  validator:
+    provider: openrouter
+    model: anthropic/claude-sonnet-4
+
+  diagnosis:
+    provider: openrouter
+    model: deepseek/deepseek-r1
+
+  medication:
+    provider: openrouter
+    model: openai/gpt-5
+
+  timeline:
+    provider: openrouter
+    model: meta-llama/llama-3.3-70b-instruct

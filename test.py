@@ -1,0 +1,2 @@
+from framework.config import config
+print(config.get("application.name"), config.get("logging.level"), config.get("storage.artifacts"), config.get("workflow.max_retries"), config.env("OPENROUTER_API_KEY"))
