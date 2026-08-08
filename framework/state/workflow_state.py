@@ -28,7 +28,9 @@ from framework.state.layout_state import LayoutState
 from framework.state.metrics_state import MetricsState
 from framework.state.model_state import ModelState
 from framework.state.validation_state import ValidationState
-
+from framework.state.clinical_summary_state import (
+    ClinicalSummaryState,
+)
 
 class WorkflowState(BaseModel):
     """
@@ -61,8 +63,10 @@ class WorkflowState(BaseModel):
     validation: ValidationState
 
     relations: RelationState = Field(
-    default_factory=RelationState
-)
+        default_factory=RelationState
+    )
+
+    clinical_summary: ClinicalSummaryState
 
     # ------------------------------------------------------------------
     # AI Model Execution

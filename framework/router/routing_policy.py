@@ -243,6 +243,51 @@ ROUTING_POLICIES: dict[str, RoutingPolicy] = {
         temperature=0.0,
         max_tokens=4096,
     ),
+
+    "table_validation": RoutingPolicy(
+        capability="table_validation",
+        provider="openrouter",
+        model="openai/gpt-oss-20b:free",
+        reasoning=False,
+        temperature=0.0,
+        max_tokens=4096,
+    ),
+
+    "section_classification": RoutingPolicy(
+        capability="section_classification",
+        provider="openrouter",
+        model="openai/gpt-oss-20b:free",
+        reasoning=False,
+        temperature=0.0,
+        max_tokens=4096,
+    ),
+
+    "clinical_summary": RoutingPolicy(
+        capability="clinical_summary",
+        provider="openrouter",
+        model="openai/gpt-oss-20b:free",
+        reasoning=False,
+        temperature=0.0,
+        max_tokens=4096,
+    ),
+
+    "clinical_summary_validation": RoutingPolicy(
+        capability="clinical_summary_validation",
+        provider="openrouter",
+        model="openai/gpt-oss-20b:free",
+        reasoning=False,
+        temperature=0.0,
+        max_tokens=4096,
+    ),
+
+    "final_report": RoutingPolicy(
+        capability="final_report",
+        provider="openrouter",
+        model="openai/gpt-oss-20b:free",
+        reasoning=False,
+        temperature=0.0,
+        max_tokens=4096,
+    ),
     
 
     # ------------------------------------------------------
