@@ -12,6 +12,10 @@ from typing import Any
 
 import httpx
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from framework.core.base_provider import BaseProvider
 
 

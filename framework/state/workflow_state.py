@@ -22,6 +22,7 @@ from pydantic import BaseModel, Field
 from framework.state.checkpoint_state import CheckpointState
 from framework.state.document_state import DocumentState
 from framework.state.entity_state import EntityState
+from framework.state.relation_state import RelationState
 from framework.state.execution_state import ExecutionState
 from framework.state.layout_state import LayoutState
 from framework.state.metrics_state import MetricsState
@@ -58,6 +59,10 @@ class WorkflowState(BaseModel):
     entities: EntityState
 
     validation: ValidationState
+
+    relations: RelationState = Field(
+    default_factory=RelationState
+)
 
     # ------------------------------------------------------------------
     # AI Model Execution

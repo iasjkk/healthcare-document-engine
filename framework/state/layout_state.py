@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, Field
 
-
+from typing import Any
 
 class LayoutNode(BaseModel):
     """
@@ -22,6 +22,14 @@ class LayoutNode(BaseModel):
     page_number: int
 
     text: str = ""
+
+    classification: str | None = None
+
+    confidence: float | None = None
+
+    metadata: dict[str, Any] = Field(
+        default_factory=dict
+    )
 
     children: list["LayoutNode"] = Field(
         default_factory=list
