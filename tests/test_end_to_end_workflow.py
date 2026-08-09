@@ -189,6 +189,7 @@ async def main():
             execution_log=execution_log,
         )
         for name in (
+            "document_structure",
             "entity_extraction",
             "entity_normalization",
             "entity_validation",
@@ -254,6 +255,7 @@ async def main():
     # --------------------------------------------------------
 
     expected_order = [
+        "document_structure",
         "entity_extraction",
         "entity_normalization",
         "entity_validation",
@@ -285,13 +287,14 @@ async def main():
     )
 
     print()
-    print("✓ All 8 agents executed in correct order")
+    print("✓ All 9 agents executed in correct order")
 
     # --------------------------------------------------------
     # Verify state propagation.
     # --------------------------------------------------------
 
     expected_order = [
+        "document_structure",
         "entity_extraction",
         "entity_normalization",
         "entity_validation",
@@ -304,7 +307,7 @@ async def main():
 
     assert execution_log == expected_order
 
-    print("✓ All 8 agents executed in correct order")
+    print("✓ All 9 agents executed in correct order")
 
     # --------------------------------------------------------
     # Verify final checkpoint.

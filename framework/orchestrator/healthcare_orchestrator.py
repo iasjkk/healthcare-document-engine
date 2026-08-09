@@ -20,6 +20,7 @@ class HealthcareOrchestrator(BaseOrchestrator):
     """
 
     REQUIRED_AGENTS = (
+        "document_structure",
         "entity_extraction",
         "entity_normalization",
         "entity_validation",
@@ -75,6 +76,7 @@ class HealthcareOrchestrator(BaseOrchestrator):
                 ) from exc
 
         self.workflow = HealthcareWorkflow(
+            document_structure_agent=agents["document_structure"],
             entity_extraction_agent=agents["entity_extraction"],
             entity_normalization_agent=agents["entity_normalization"],
             entity_validation_agent=agents["entity_validation"],

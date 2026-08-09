@@ -1,0 +1,1 @@
+""" Application layer for the Healthcare Document Engine. """

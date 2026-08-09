@@ -38,6 +38,11 @@ async def main() -> None:
     calls: list[str] = []
 
     workflow = HealthcareWorkflow(
+        document_structure_agent=MockAgent(
+            "document_structure",
+            calls,
+        ),
+
         entity_extraction_agent=MockAgent(
             "entity_extraction",
             calls,
@@ -79,6 +84,7 @@ async def main() -> None:
     result = await workflow.run(state)
 
     expected = [
+        "document_structure",
         "entity_extraction",
         "entity_normalization",
         "entity_validation",

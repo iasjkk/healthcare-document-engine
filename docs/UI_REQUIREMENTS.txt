@@ -1,0 +1,8 @@
+# Add these if they are not already present
+fastapi
+uvicorn[standard]
+streamlit
+requests
+python-multipart
+pypdf
+python-docx

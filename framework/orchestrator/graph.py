@@ -37,6 +37,7 @@ class HealthcareWorkflow:
 
     def __init__(
         self,
+        document_structure_agent,
         entity_extraction_agent: Any,
         entity_normalization_agent: Any,
         entity_validation_agent: Any,
@@ -47,6 +48,7 @@ class HealthcareWorkflow:
         final_report_agent: Any,
     ) -> None:
 
+        self.document_structure_agent = document_structure_agent
         self.entity_extraction_agent = entity_extraction_agent
         self.entity_normalization_agent = entity_normalization_agent
         self.entity_validation_agent = entity_validation_agent
@@ -68,6 +70,12 @@ class HealthcareWorkflow:
         Every agent is executed through BaseAgent.run()
         so the standard lifecycle hooks are preserved.
         """
+
+        # =====================================================
+        # Document Structure
+        # =====================================================
+
+        state = await self.document_structure_agent.run(state)
 
         # =====================================================
         # Entity Pipeline

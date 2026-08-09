@@ -1,32 +1,17 @@
-"""
-Final Clinical Report Agent.
-
-Generates the final structured clinical report
-from the existing WorkflowState.
-
-The result is stored in:
-
-state.clinical_summary.metadata["final_report"]
-"""
-
 from __future__ import annotations
 
 from typing import Any
 
-from framework.schemas.final_report_schema import (
-    FinalReportResponse,
-)
+from framework.core.base_agent import BaseAgent
+from framework.state.workflow_state import WorkflowState
 
-from framework.state.workflow_state import (
-    WorkflowState,
-)
-
-from framework.utils.json_parser import (
-    parse_json_response,
-)
+# Keep these imports exactly as they exist in your current file.
+# They are shown here based on the code you provided.
+from framework.schemas.final_report_schema import FinalReportResponse
+from framework.utils.json_parser import parse_json_response
 
 
-class FinalReportAgent:
+class FinalReportAgent(BaseAgent):
     """
     Generates the final clinical report.
     """
@@ -38,13 +23,17 @@ class FinalReportAgent:
         logger: Any | None = None,
     ) -> None:
 
-        self.router = router
-
-        self.prompt_registry = (
-            prompt_registry
+        super().__init__(
+            name="final_report",
+            description="Generates the final clinical report.",
+            version="1.0.0",
         )
 
-        self.logger = logger
+        self.router = router
+        self.prompt_registry = prompt_registry
+
+        if logger is not None:
+            self.logger = logger
 
     async def execute(
         self,
@@ -55,7 +44,6 @@ class FinalReportAgent:
         """
 
         if self.logger:
-
             self.logger.info(
                 "Starting Final Report Agent."
             )
@@ -229,7 +217,6 @@ class FinalReportAgent:
         # ------------------------------------------------------
 
         if self.logger:
-
             self.logger.info(
                 "Final Report Agent completed. "
                 f"Confidence={parsed.confidence}"

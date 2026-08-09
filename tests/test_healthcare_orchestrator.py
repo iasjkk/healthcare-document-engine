@@ -35,6 +35,7 @@ def build_registry() -> AgentRegistry:
     registry = AgentRegistry()
 
     agent_names = [
+        "document_structure",
         "entity_extraction",
         "entity_normalization",
         "entity_validation",
@@ -88,6 +89,11 @@ async def main() -> None:
     # ---------------------------------------------------------
 
     workflow = orchestrator.workflow
+
+    assert (
+        workflow.document_structure_agent
+        is registry.get("document_structure")
+    )
 
     assert (
         workflow.entity_extraction_agent
