@@ -83,6 +83,10 @@ from framework.state.workflow_state import (
     WorkflowState,
 )
 
+from framework.state.clinical_summary_state import (
+    ClinicalSummaryState,
+)
+
 
 async def main() -> None:
 
@@ -262,6 +266,8 @@ async def main() -> None:
         validation=ValidationState(),
 
         model=ModelState(),
+
+        clinical_summary=ClinicalSummaryState(),
 
         metrics=MetricsState(),
 

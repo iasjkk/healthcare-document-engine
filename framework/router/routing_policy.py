@@ -202,7 +202,7 @@ ROUTING_POLICIES: dict[str, RoutingPolicy] = {
     "entity_extraction": RoutingPolicy(
         capability="entity_extraction",
         provider="openrouter",
-        model="openai/gpt-oss-20b:free",
+        model="nvidia/nemotron-3-ultra-550b-a55b:free",
         reasoning=False,
         temperature=0.0,
         max_tokens=4096,
@@ -219,6 +219,15 @@ ROUTING_POLICIES: dict[str, RoutingPolicy] = {
 
     "entity_validation": RoutingPolicy(
         capability="entity_validation",
+        provider="openrouter",
+        model="openai/gpt-oss-20b:free",
+        reasoning=False,
+        temperature=0.0,
+        max_tokens=4096,
+    ),
+
+    "relation_extraction": RoutingPolicy(
+        capability="relation_extraction",
         provider="openrouter",
         model="openai/gpt-oss-20b:free",
         reasoning=False,
@@ -293,17 +302,6 @@ ROUTING_POLICIES: dict[str, RoutingPolicy] = {
     # ------------------------------------------------------
     # Phase 2
     # ------------------------------------------------------
-
-    "entity_extraction": RoutingPolicy(
-
-        capability="entity_extraction",
-
-        provider="openrouter",
-
-        model="anthropic/claude-sonnet-4",
-
-        reasoning=True,
-    ),
 
     "entity_standardization": RoutingPolicy(
 

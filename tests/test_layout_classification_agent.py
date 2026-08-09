@@ -70,6 +70,15 @@ from framework.state.checkpoint_state import (
     CheckpointState,
 )
 
+from framework.state.clinical_summary_state import (
+    ClinicalSummaryState,
+    MedicationSummary,
+)
+
+from framework.state.clinical_summary_state import (
+    ClinicalSummaryState,
+    MedicationSummary,
+)
 
 async def main():
 
@@ -207,6 +216,8 @@ async def main():
         model=ModelState(),
 
         metrics=MetricsState(),
+
+        clinical_summary=ClinicalSummaryState(),
 
         checkpoint=CheckpointState(
 

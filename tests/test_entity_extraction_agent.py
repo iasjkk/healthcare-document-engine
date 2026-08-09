@@ -78,6 +78,11 @@ from framework.state.workflow_state import (
     WorkflowState,
 )
 
+from framework.state.clinical_summary_state import (
+    ClinicalSummaryState,
+    MedicationSummary,
+)
+
 
 async def main() -> None:
 
@@ -195,6 +200,8 @@ ACC-2026-00123.
         model=ModelState(),
 
         metrics=MetricsState(),
+
+        clinical_summary=ClinicalSummaryState(),
 
         checkpoint=CheckpointState(
             checkpoint_id=str(uuid4()),
